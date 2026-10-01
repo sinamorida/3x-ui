@@ -23,5 +23,8 @@ COPY nginx.conf.template /etc/nginx/nginx.conf.template
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
+# nginx روی این پورت به بیرون سرو می‌دهد
+EXPOSE 3000
+
 # Railway پورت رو از طریق متغیر $PORT تزریق می‌کند
 CMD ["/start.sh"]
